@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/uu_folder_main_panel"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/uu_folder_lingyun_bg"
+    android:orientation="vertical" >
+
+    <GridView
+        android:id="@id/uu_folder_content_list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="40dp"
+        android:descendantFocusability="blocksDescendants"
+        android:footerDividersEnabled="true"
+        android:gravity="center"
+        android:listSelector="@android:color/transparent"
+        android:numColumns="4"
+        android:scrollbarThumbVertical="@drawable/home_scrollbar"
+        android:stretchMode="columnWidth" />
+    <!-- android:verticalSpacing="@dimen/gridview_verticalspacing" -->
+
+    <SlidingDrawer
+        android:id="@id/uu_folder_virtual_panel"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/slidingdrawer_height"
+        android:layout_alignParentBottom="true"
+        android:content="@id/uu_folder_title_panel"
+        android:handle="@id/uu_folder_navigator"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@id/uu_folder_navigator"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/uu_folder_up_arrow"
+            android:contentDescription="@null" />
+
+        <LinearLayout
+            android:id="@id/uu_folder_title_panel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/uu_folder_vitural_panel" >
+
+            <RelativeLayout
+                android:id="@id/uu_folder_content_panel"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <RelativeLayout
+                    android:id="@id/uu_folder_more_and_fresh"
+                    android:layout_width="fill_parent"
+                    android:layout_height="35dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="20dp" >
+
+                    <RelativeLayout
+                        android:id="@+id/uu_folder_refresh_imageview_bg"
+                        android:layout_width="45.0dip"
+                        android:layout_height="35.0dip"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:clickable="true"
+                        android:onClick="onClick" >
+
+                        <ImageView
+                            android:id="@id/uu_folder_refresh_imageview"
+                            android:layout_width="20.0dip"
+                            android:layout_height="20.0dip"
+                            android:layout_centerInParent="true"
+                            android:contentDescription="@null"
+                            android:scaleType="center"
+                            android:src="@drawable/uu_folder_refresh" />
+                    </RelativeLayout>
+
+                    <ProgressBar
+                        android:id="@id/uu_folder_refresh_progress"
+                        style="@style/UUFolder.ResourcesRefreshProgress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="7.0dip"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:text="@string/rementuijian"
+                        android:textColor="@color/uu_downlaod_white"
+                        android:textSize="18sp"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <HorizontalScrollView
+                    android:id="@+id/folder_recommend_container_brackground"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_below="@id/uu_folder_more_and_fresh"
+                    android:paddingTop="0dp"
+                    android:scrollbars="none" >
+
+                    <LinearLayout
+                        android:id="@+id/folder_recommend_container"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingLeft="12dp"
+                        android:paddingRight="12dp" >
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </RelativeLayout>
+        </LinearLayout>
+    </SlidingDrawer>
+
+    <RelativeLayout
+        android:id="@+id/folder_guide"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#aa000000"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="30sp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="100dp"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/notify_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="@string/notify_sliding"
+                android:textColor="@color/uu_downlaod_white"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/bulb"
+                android:layout_width="wrap_content"
+                android:layout_height="30sp"
+                android:layout_toLeftOf="@+id/notify_tv"
+                android:contentDescription="@null"
+                android:scaleType="centerInside"
+                android:src="@drawable/bulb" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/notify_left"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="30dp"
+            android:contentDescription="@null"
+            android:src="@drawable/notify_left" />
+
+        <ImageView
+            android:id="@+id/notify_right"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="30dp"
+            android:contentDescription="@null"
+            android:src="@drawable/notify_right" />
+
+        <Button
+            android:id="@+id/btn_folder_guide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="90dp"
+            android:layout_marginRight="10dp"
+            android:background="#39AFDB"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            android:text="@string/config"
+            android:textColor="#fff"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

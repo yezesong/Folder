@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mq.folder.common.view.RecommendButton xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <!-- android:layout_height="@dimen/app_icon_size" -->
+
+    <RelativeLayout
+        android:id="@+id/recommend_bg"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:background="@drawable/uu_item_click_selector"
+        android:hapticFeedbackEnabled="true" >
+
+        <ImageView
+            android:id="@+id/recommend_icon"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:layout_margin="4dp"
+            android:contentDescription="@null"
+            android:src="@drawable/onlinefolder_app_icon_default" />
+
+        <ImageView
+            android:id="@+id/recommend_pause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/uu_folder_pause"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/recommend_title"
+        style="@style/UUFolder.AppTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:ellipsize="marquee"
+        android:gravity="center_horizontal"
+        android:lines="2"
+        android:textColor="@color/uu_folder_app_title_color" />
+
+</com.mq.folder.common.view.RecommendButton>
